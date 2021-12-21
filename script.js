@@ -5,30 +5,29 @@ function scrollSuave() {
 
     function scrollSessao(evento) {
         evento.preventDefault();
-
         const href = evento.currentTarget.getAttribute("href");
-        const sessao = document.querySelector(href);
+        const sessao = document.querySelector(href)
+
+        const topo = sessao.offsetTop;
         sessao.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            top: "start",
+            behavior: "smooth"
         })
-
-        // const topo = sessao.offsetTop;
         // window.scrollTo({
-        //     top: "topo",
-        //     behavior: "smooth",
+        //     top: topo,
+        //     behavior: 'smooth',
+        // })
 
-        // });
     }
-
-    navSuave.forEach((e) => {
-        e.addEventListener('click', scrollSessao)
-    });
+    navSuave.forEach(link => {
+        link.addEventListener("click", scrollSessao)
+    })
 }
-scrollSuave();
+// scrollSuave();
+
 
 // navegação
-function iniciarNav() {
+function animaisDescricao() {
     const animais = document.querySelectorAll(".js-animais li");
     animais[0].classList.add("ativo")
 
@@ -46,16 +45,15 @@ function iniciarNav() {
         animais.forEach((a, index) => {
             a.addEventListener("click", () => {
                 ativar(index)
-            })
-        })
+            });
+        });
     }
-
-
 }
-iniciarNav();
+animaisDescricao();
+
 // Animando Faq
 
-function animarFaq() {
+function MostraRespostasFaq() {
     const dt = document.querySelectorAll(".js-accordion dt");
     dt[0].classList.add("ativo");
     dt[0].nextElementSibling.classList.add("ativo");
@@ -70,31 +68,73 @@ function animarFaq() {
         });
     }
 }
-animarFaq();
+MostraRespostasFaq();
 
-// anima scroll
-
-const elementos = document.querySelectorAll(".js-scroll");
-
-    const metade = window.innerHeight * 0.6;
-    
-
-    function anima() {
-        elementos.forEach((e) => {
-            const topoSessao = e.getBoundingClientRect().top;
-            const sessaoVisisvel = (topoSessao - metade) ;
-          
-           
-            if (sessaoVisisvel < 0) {
-                e.classList.add("ativo");
-                console.log("ativo")
-            }
-            else
-                elementos.classList.remove("ativo");
-                console.log("ativo removido")
-        });
+function initAnimacaoScroll() {
+    const sections = document.querySelectorAll('.js-scroll');
+    if(sections.length) {
+      const windowMetade = window.innerHeight * 0.6;
+  
+      function animaScroll() {
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const isSectionVisible = (sectionTop - windowMetade) < 0;
+          if(isSectionVisible)
+            section.classList.add('ativo');
+          else 
+            section.classList.remove('ativo');
+        })
+      }
+  
+      animaScroll();
+  
+      window.addEventListener('scroll', animaScroll);
     }
-    window.addEventListener("scroll", anima);
+  }
+  initAnimacaoScroll();
 
+// anima scroll precisa rever
+
+// function animaScroll() {
+//     const elementos = document.querySelectorAll(".role");
+//     const meio = window.innerHeight *0.6;
+//     const listaScroll = [];
+
+//     const anima = ()=>{
+//         elementos.forEach((e)=>{
+//             const sessaoTopo = e.getBoundingClientRect().top - meio;
+//             if(sessaoTopo < 0){
+//                 e.classList.add("ativo");
+//             }
+//         })
+//     }
+//      anima
+//     window.addEventListener("scroll", anima);
+// }
+// animaScroll();
+    
+    // const metade = window.innerHeight ;
+    // console.log("meio",metade)
+
+
+    // function anima() {
+    //     elementos.forEach((e) => {
+    //         const topoSessao = e.offsetTop;
+    //         console.log("topo", topoSessao, e)
+
+
+
+    //         if (topoSessao < 0) {
+    //             e.classList.add("testeAtivo");
+     
+
+    //         }
+    //         else {
+    //             e.classList.remove("testeAtivo");
+ 
+    //         }
+
+    //     });
+    // }
 
 
