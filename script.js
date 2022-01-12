@@ -3,7 +3,17 @@ import initAnimaisDescricao from "./modules/animaisDescricao.js";
 import initMostraRespostasFaq from "./modules/mostraRespostasFaq.js";
 import initAnimacaoScroll from "./modules/animaScroll.js";
 import initModal from "./modules/modal.js";
-import iinitToolTip from "./modules/tooltip.js";
+import initToolTip from "./modules/tooltip.js";
+import initDropdown from "./modules/dropdown.js";
+import iniOutsideclick from "./modules/outsideclick.js";
+import exercicios  from "./modules/exercicios.js";
+import menu from "./modules/menu.js";
+
+import data from "./modules/data.js";
+import animaisApi from "./modules/animaisApi.js";
+import bitcoinApi from "./modules/bitcon.js";
+
+
 
 
 
@@ -12,5 +22,13 @@ initScrollSuave();
  initMostraRespostasFaq();
  initAnimacaoScroll();
 initModal();
-initToolTip();
+// initToolTip();
+initDropdown();
+// iniOutsideclick();
+exercicios ();
+menu();
+data();
+animaisApi();
+bitcoinApi()
+
 

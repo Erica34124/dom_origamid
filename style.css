@@ -1,2 +1,9 @@
 @import './css/geral.css';
-@import './css/modal.css'
+@import './css/modal.css';
+@import './css/tooltip.css';
+@import './css/dropdown.css';
+@import './css/menu.css';
+@import './css/numeros.css';
+@import './css/exercicio.css';
+@import './css/data.css';
+@import './css/animaisApi.css';

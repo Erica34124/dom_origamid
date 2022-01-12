@@ -1,6 +1,7 @@
 export default function initAnimaisDescricao() {
-    const animais = document.querySelectorAll(".js-animais li");
-    animais[0].classList.add("ativo")
+    const animais = document.querySelectorAll(".animais-lista li");
+    
+    animais[0].classList.add("ativo");
 
     const descricao = document.querySelectorAll(".js-descricao section");
     descricao[0].classList.add("ativo")

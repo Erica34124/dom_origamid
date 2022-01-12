@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
     <title>Aprendendo Dom</title>
     <script>
@@ -15,14 +16,27 @@
 
 <body>
     <div class="grid-container">
+
         <nav class="menu js-scroll js.js-scroll ">
-            <ul>
+            <button data-menu="button" aria-expanded="false" aria-controls="menu">menu</button>
+            <ul data-menu="list" id="menu">
                 <li><a href="#animais">Animais</a></li>
+                <li data-dropdown="">
+                    <a href="#">Sobre</a>
+                    <ul class="dropdownMenu">
+                        <li><a href="empresa.html">Empresa</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="socios.html">Socios</a></li>
+                        <li><a  href="#">Formulário</a></li>
+                    </ul>
+                </li>
                 <li><a href="#faq">Faq</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a data-modal="abrir" href="login.html">Login</a></li>
+                <li><a data-modal="abrir" href="/paginas/login.html">Login</a></li>
+                <li><a data-modal="abrir" href="#">Formulário</a></li>
             </ul>
         </nav>
+
         <section class="grid-section animais js js-scroll " id="animais">
             <h1 class="titulo">Animais fantásticos</h1>
             <ul class="animais-lista js-animais">
@@ -94,15 +108,25 @@
             </dl>
 
         </section>
+        <section class="grid-section numeros  js js-scroll" id="numero" data-anime="scroll">
+            <h1 class="titulo">Números</h1>
+            <div class="numeros-grid">  </div>
+            
+           
+            
+        </section>
 
-        <section class="grid-section contato js js-scroll " id="contato">
+        <section class="grid-section contato  js js-scroll " id="contato">
             <h1 class="titulo">Contato</h1>
-            <div class="mapa" data-tooltip aria-label="Endereço próximo ao estacionamento"><img src="img/mapa.png" alt=""></div>
+            <div class="mapa" data-tooltip aria-label="Endereço próximo ao estacionamento"><img src="img/mapa.png"
+                    alt=""></div>
             <ul class="dados">
                 <li>erica.manager@gmail.com</li>
                 <li>+55 (19) 98701 - 8258</li>
                 <li>Rua das violetas, 700</li>
                 <li>Campinas-SP</li>
+                <li>Doe <span class="btc">0</span> Bitcoin para nos ajudar.</li>
+                <li data-semana="1, 2, 3, 4, 5" data-hora="8,18">Horário funcionamento das 8 ás 18 hs  seg - sexta</li>
             </ul>
         </section>
         <footer class="copy">
@@ -110,7 +134,7 @@
 
         </footer>
     </div>
-    <section  class="modal-container " data-modal='container '>
+    <section class="modal-container " data-modal='container '>
         <div class="modal">
             <button class="fechar" data-modal="fechar">X</button>
             <form action="">
